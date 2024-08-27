@@ -9,20 +9,21 @@ html {
 * {
     font-family: 'Inter', sans-serif; /* Fuente por defecto */
     font-weight: 400;
-    font-size: 2rem; /* Cambiado de 32px a 2rem */
+    font-size: 1.5rem; /* Ajustado de 2rem a 1.5rem para mayor legibilidad */
     line-height: 1.5; /* Ajuste de altura de línea */
     box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
 
 body, html {
     margin: 0;  
-    padding: 0;
+    padding: 0; /* Corrige padding para body */
     height: 100%;
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no caben en una sola línea */
+    width: 100%;
 }
 
-main {
+body {
     background-image: url('./assts/pixabay.jpg');
     background-size: cover; /* Asegura que la imagen cubra todo el área disponible */
     background-position: center; /* Centra la imagen */
@@ -33,26 +34,76 @@ main {
     align-items: center;
     position: relative; /* Necesario para el footer */
     padding-bottom: 4rem; /* Añade un padding inferior para evitar que el section toque el footer */
-}   
+    width: 100%;
+}
+
+header.Titulo {
+    font-size: 2rem; /* Tamaño de fuente grande para destacar el título */
+    color: #5ffd16; /* Color del texto blanco para contrastar con el fondo */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro con opacidad para destacar el texto */
+    padding: 1rem 2rem; /* Espaciado interno */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2); /* Sombra ligera para dar profundidad */
+    text-align: center; /* Centra el texto */
+    position: absolute; /* Posiciona el header absolutamente */
+    top: 1rem; /* Ajusta la distancia desde la parte superior de la ventana */
+    width: 100%; /* Asegura que el header ocupe todo el ancho disponible */
+    z-index: 10; /* Asegura que el header esté por encima de otros elementos */
+}
+
+/* Ajuste para el main para tener suficiente espacio para el header */
+main.main {
+    margin-top: 5rem; /* Añade un margen superior para dar espacio al header */
+}
+
+/* Asegura que el texto dentro del header se ajuste correctamente */
+header.Titulo p {
+    margin: 0; /* Elimina el margen por defecto */
+    font-size: 2rem; /* Ajusta el tamaño de fuente para el texto dentro del header */
+}
+
+.informacion {
+    font-size: 1.125rem; /* Tamaño de fuente ajustado para los párrafos dentro del div */
+    color: #333; /* Color de texto oscuro para buena legibilidad */
+    display: flex; /* Usa flexbox para alinear el ícono y el texto */
+    align-items: center; /* Alinea verticalmente el ícono y el texto */
+}
+
+.informacion i {
+    font-size: 1.5rem; /* Tamaño del ícono */
+    color: #000000; /* Color del ícono (puedes ajustar según el diseño) */
+    margin-right: 0.5rem; /* Espacio entre el ícono y el texto */
+}
 
 section {
     display: flex;
-    flex-direction: row; /* Coloca los divs lado a lado por defecto */
-    
-    
+    justify-content: center;
+    align-items: center;
     padding: 1.25rem; /* Ajustado de 10px a 1.25rem */
-    width: 80%; /* Ajusta el ancho del contenedor */
+    width: 100%; /* Ajusta el ancho del contenedor */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
     box-sizing: border-box; /* Incluye padding en el ancho total */
     gap: 2rem; /* Añade espacio entre los divs (separación de 2rem) */
-    
     margin-bottom: 4rem; /* Añade un margen inferior para asegurar espacio con el footer */
 }
 
-/* Ajusta el tamaño y el margen de las áreas de texto y botones para asegurar una presentación uniforme */
 .textArea, .textArea2 {
     margin-bottom: 0.625rem; /* Ajustado de 10px a 0.625rem */
     width: 100%; /* Asegura que el textarea ocupe todo el ancho disponible */
+    padding: 0.625rem; /* Espaciado interno para mayor confort al escribir */
+    border: 1px solid #ccc; /* Borde sutil para definir el área del textarea */
+    border-radius: 0.3125rem; /* Bordes redondeados */
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2); /* Sombra ligera para dar profundidad */
+    resize: vertical; /* Permite que el usuario ajuste la altura del textarea */
+    font-size: 1rem; /* Tamaño de la fuente dentro del textarea */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+}
+
+/* Estilo para cuando el textarea está enfocado */
+.textArea:focus, .textArea2:focus {
+    border-color: #007bff; /* Color de borde azul cuando está enfocado */
+    outline: none; /* Quita el contorno predeterminado del navegador */
+    box-shadow: 0 0 0.625rem rgba(0, 123, 255, 0.25); /* Sombra azul clara al enfocar */
 }
 
 button {
@@ -73,7 +124,7 @@ button:hover {
 
 footer {
     background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
-    color: #fff; /* Color del texto blanco */
+    color: #5ffd16; /* Color del texto blanco */
     text-align: center; /* Centra el texto en el footer */
     padding: 0.3125rem; /* Espaciado interno, ajustado de 5px a 0.3125rem */
     position: absolute; /* Permite que el footer esté en la parte inferior */
@@ -82,7 +133,7 @@ footer {
     font-size: 0.875rem; /* Tamaño de la fuente, ajustado de 14px a 0.875rem */
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     section {
         flex-direction: column;
         width: 80%;
@@ -91,12 +142,22 @@ footer {
 
     section > div {
         width: 100%; /* Los divs ocuparán el 100% del ancho disponible */
-        margin-bottom: 1rem; /* Añade espacio entre los divs */
+        height: 20%;
     }
 
-    footer {
-        position: relative; /* Cambia la posición a relativa para que siga el flujo del documento */
-        bottom: 0; /* No es necesario con position: relative, pero puedes dejarlo para claridad */
-        margin-top: 2rem; /* Añade margen superior para separarlo del contenido anterior */
+    /* Ajuste para reducir la altura del textarea */
+    .textArea, .textArea2 {
+        height: 8rem; /* Ajusta la altura según sea necesario */
+    }
+    
+    header.Titulo {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño para pantallas pequeñas */
+        padding: 0.75rem 1rem; /* Ajusta el espaciado interno para pantallas pequeñas */
+        top: 0.5rem; /* Ajusta la distancia desde la parte superior para pantallas pequeñas */
+    }
+
+    /* Ajusta el margen superior del main para asegurar que el contenido no se superponga con el header */
+    main.main {
+        margin-top: 4rem; /* Reduce el margen superior para pantallas pequeñas */
     }
 }

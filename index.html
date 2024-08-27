@@ -6,21 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Otros elementos head -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="body">
-    
-    <header></header>
+    <header class="Titulo">Encriptador De Texto</header>
     <main class="main">
         <section>
             <div class="left-side">
-                <textarea class="textArea" id="EncriptarTexto" rows="8" cols="30" placeholder="ingrese el texto aqui"></textarea>
+                <textarea class="textArea" id="EncriptarTexto" rows="8" cols="30" placeholder="Ingrese el texto aqui"></textarea>
                 <button id="buttonEn">Encriptar</button>  
             </div>
-            <div>
-                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+            <div class="informacion">
+                <i class="fas fa-exclamation-circle"></i> Solo letras minusculas y sin acentos
             </div>
             <div class="right-side">
-                <textarea class="textArea2" id="DesencriptarTexto" rows="8" cols="30"></textarea>
+                <textarea class="textArea2" id="DesencriptarTexto" rows="8" cols="30" placeholder="Ingrese el Encriptado aqui"></textarea>
                 <button id="buttonDes">Desencriptar</button>
             </div>
         </section>
