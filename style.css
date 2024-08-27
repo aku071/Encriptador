@@ -1,27 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Tamaño base del font en html */
+html {
+    font-size: 16px; /* Esto hace que 1rem = 16px */
+}
+
+/* Aplicación de tamaño de fuente en rem */
+* {
+    font-family: 'Inter', sans-serif; /* Fuente por defecto */
+    font-weight: 400;
+    font-size: 2rem; /* Cambiado de 32px a 2rem */
+    line-height: 1.5; /* Ajuste de altura de línea */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+}
+
 body, html {
-    margin: 0;
+    margin: 0;  
     padding: 0;
     height: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no caben en una sola línea */
 }
+
 main {
     background-image: url('./assts/pixabay.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100%;
+    background-size: cover; /* Asegura que la imagen cubra todo el área disponible */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que el main ocupe toda la altura de la ventana */
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    position: relative; /* Necesario para el footer */
+    padding-bottom: 4rem; /* Añade un padding inferior para evitar que el section toque el footer */
+}   
+
 section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    flex-direction: row; /* Coloca los divs lado a lado por defecto */
+    
+    
+    padding: 1.25rem; /* Ajustado de 10px a 1.25rem */
+    width: 80%; /* Ajusta el ancho del contenedor */
     background-color: rgba(255, 255, 255, 0.8); /* Fondo semitransparente */
+    box-sizing: border-box; /* Incluye padding en el ancho total */
+    gap: 2rem; /* Añade espacio entre los divs (separación de 2rem) */
+    
+    margin-bottom: 4rem; /* Añade un margen inferior para asegurar espacio con el footer */
 }
+
+/* Ajusta el tamaño y el margen de las áreas de texto y botones para asegurar una presentación uniforme */
 .textArea, .textArea2 {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem; /* Ajustado de 10px a 0.625rem */
+    width: 100%; /* Asegura que el textarea ocupe todo el ancho disponible */
 }
+
 button {
-    margin-bottom: 20px;
+    background-color: #007bff; /* Color de fondo por defecto (azul) */
+    color: #fff; /* Color del texto (blanco) */
+    border: none; /* Sin borde */
+    border-radius: 0.3125rem; /* Bordes redondeados, ajustado de 5px a 0.3125rem */
+    padding: 0.625rem 1.25rem; /* Espaciado interno (relleno), ajustado de 10px 20px a 0.625rem 1.25rem */
+    font-size: 1rem; /* Tamaño de la fuente, ajustado de 16px a 1rem */
+    cursor: pointer; /* Cambia el cursor a una mano apuntando */
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+}
+
+/* Estilo para el botón cuando el puntero está sobre él */
+button:hover {
+    background-color: #28a745; /* Color de fondo cuando el puntero está sobre el botón (verde) */
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    color: #fff; /* Color del texto blanco */
+    text-align: center; /* Centra el texto en el footer */
+    padding: 0.3125rem; /* Espaciado interno, ajustado de 5px a 0.3125rem */
+    position: absolute; /* Permite que el footer esté en la parte inferior */
+    bottom: 0;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+    font-size: 0.875rem; /* Tamaño de la fuente, ajustado de 14px a 0.875rem */
+}
+
+@media (max-width: 800px) {
+    section {
+        flex-direction: column;
+        width: 80%;
+        padding: 10%;
+    }
+
+    section > div {
+        width: 100%; /* Los divs ocuparán el 100% del ancho disponible */
+        margin-bottom: 1rem; /* Añade espacio entre los divs */
+    }
+
+    footer {
+        position: relative; /* Cambia la posición a relativa para que siga el flujo del documento */
+        bottom: 0; /* No es necesario con position: relative, pero puedes dejarlo para claridad */
+        margin-top: 2rem; /* Añade margen superior para separarlo del contenido anterior */
+    }
 }
