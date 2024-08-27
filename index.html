@@ -5,20 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador</title>
-    <link rel="stylesheet" href="styles/style.css">
-
-<body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
     
     <header></header>
-    <section>
-        <div>
-            <p>Ingrese texto aqui</p>
-        </div>
-        <div>
-
-        </div>
-    </section>
-    
-</body>
+    <main class="main">
+        <section>
+            <div class="left-side">
+                <textarea class="textArea" id="EncriptarTexto" rows="8" cols="30" placeholder="ingrese el texto aqui"></textarea>
+                <button id="buttonEn">Encriptar</button>  
+            </div>
+            <div>
+                <h6 class="informacion">Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="right-side">
+                <textarea class="textArea2" id="DesencriptarTexto" rows="8" cols="30"></textarea>
+                <button id="buttonDes">Desencriptar</button>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Nicolás aka Aku071</p>
+    </footer>
     <script src="app.js"></script>
+</body>
 </html>
