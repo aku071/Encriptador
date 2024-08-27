@@ -1,3 +1,7 @@
+![imagen](https://github.com/user-attachments/assets/db37d512-76fb-4fea-952c-af963741817e)
+
+
+
 Encriptador de Texto
 
 Este proyecto es un encriptador y desencriptador de texto simple implementado con HTML, CSS y JavaScript. Su objetivo es transformar un texto introducido por el usuario en un formato encriptado basado en reglas específicas, y luego permitir la desencriptación del mismo.
