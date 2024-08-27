@@ -1,4 +1,5 @@
-![imagen](https://github.com/user-attachments/assets/db37d512-76fb-4fea-952c-af963741817e)
+
+![Uploading encriptador.png…]()
 
 
 
